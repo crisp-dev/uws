@@ -302,6 +302,9 @@ class WebSocket {
                 cb = options;
                 options = null;
             }
+            if (typeof compress !== 'boolean') {
+                compress = options && options.compress === true ? true : false;
+            }
 
             const binary = options && typeof options.binary === 'boolean' ? options.binary : typeof message !== 'string';
 
